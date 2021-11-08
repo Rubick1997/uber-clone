@@ -1,6 +1,6 @@
 import React from "react";
 import { FlatList } from "react-native";
-import NavoptionsItem from "../NavoptionsItem";
+import NavOptionsItem from "../NavOptionsItem";
 import { Constants } from "./NavOptions.constants";
 
 const NavOptions = () => {
@@ -10,7 +10,11 @@ const NavOptions = () => {
       keyExtractor={(item) => item.id}
       horizontal
       renderItem={({ item }) => (
-        <NavoptionsItem title={item.title} image={item.image} />
+        <NavOptionsItem
+          screen={item.screen}
+          title={item.title}
+          image={item.image}
+        />
       )}
     />
   );

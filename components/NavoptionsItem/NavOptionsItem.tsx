@@ -1,3 +1,4 @@
+import { useNavigation } from "@react-navigation/native";
 import React, { FC } from "react";
 import { View, Text, TouchableOpacity, Image } from "react-native";
 import { Icon } from "react-native-elements/dist/icons/Icon";
@@ -6,11 +7,17 @@ import tw from "tailwind-react-native-classnames";
 type NavOptionsItemType = {
   image: string;
   title: string;
+  screen: any;
 };
 
-const NavOptionsItem: FC<NavOptionsItemType> = ({ image, title }) => {
+const NavOptionsItem: FC<NavOptionsItemType> = ({ image, title, screen }) => {
+  const navigation = useNavigation();
+
   return (
-    <TouchableOpacity style={tw`p-2 pl-6 pb-8 pt-4 bg-gray-200 m-2 w-40`}>
+    <TouchableOpacity
+      style={tw`p-2 pl-6 pb-8 pt-4 bg-gray-200 m-2 w-40`}
+      onPress={() => navigation.navigate(screen)}
+    >
       <Text>
         <View>
           <Image
