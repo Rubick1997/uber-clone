@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, SafeAreaView, Image } from "react-native";
 import tw from "tailwind-react-native-classnames";
-import { NavOptions } from "../../components";
+import { NavFavorites, NavOptions } from "../../components";
 import { GooglePlacesAutocomplete } from "react-native-google-places-autocomplete";
 import { GOOGLE_MAPS_KEY } from "@env";
 import { useDispatch } from "react-redux";
@@ -9,7 +9,6 @@ import { setOrigin, setDestination } from "../../store/navReducer";
 
 const HomeScreen = () => {
   const dispatch = useDispatch();
-
   return (
     <SafeAreaView style={tw`bg-white h-full`}>
       <View style={tw`p-5`}>
@@ -43,6 +42,7 @@ const HomeScreen = () => {
           debounce={400}
         />
         <NavOptions />
+        <NavFavorites />
       </View>
     </SafeAreaView>
   );

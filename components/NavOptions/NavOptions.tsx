@@ -1,6 +1,6 @@
 import React from "react";
 import { FlatList } from "react-native";
-import NavOptionsItem from "../NavOptionsItem";
+import { NavOptionsItem } from "./components";
 import { Constants } from "./NavOptions.constants";
 
 const NavOptions = () => {

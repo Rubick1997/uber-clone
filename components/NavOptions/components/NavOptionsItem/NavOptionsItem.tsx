@@ -4,7 +4,7 @@ import { View, Text, TouchableOpacity, Image } from "react-native";
 import { Icon } from "react-native-elements/dist/icons/Icon";
 import { useSelector } from "react-redux";
 import tw from "tailwind-react-native-classnames";
-import { selectNavs } from "../../store/navReducer";
+import { selectNavs } from "../../../../store/navReducer";
 
 type NavOptionsItemType = {
   image: string;
