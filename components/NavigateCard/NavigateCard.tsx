@@ -1,5 +1,11 @@
 import React from "react";
-import { Text, SafeAreaView, View, StyleSheet } from "react-native";
+import {
+  Text,
+  SafeAreaView,
+  View,
+  StyleSheet,
+  TouchableOpacity,
+} from "react-native";
 import tw from "tailwind-react-native-classnames";
 import { GooglePlacesAutocomplete } from "react-native-google-places-autocomplete";
 import { GOOGLE_MAPS_KEY } from "@env";
@@ -7,6 +13,10 @@ import { useDispatch } from "react-redux";
 import { setDestination } from "../../store/navReducer";
 import { useNavigation } from "@react-navigation/native";
 import NavFavorites from "../NavFavorites";
+import { Icon } from "react-native-elements";
+import { Constants } from "./NavigateCard.constants";
+import { NavigateButton } from "./components";
+
 const NavigateCard = () => {
   const dispatch = useDispatch();
   const navigation = useNavigation();
@@ -37,6 +47,22 @@ const NavigateCard = () => {
           />
         </View>
         <NavFavorites />
+      </View>
+      <View
+        style={tw`flex-row bg-white justify-evenly py-2 mt-auto border-t border-gray-100`}
+      >
+        {Constants.navigationElements.map((item) => (
+          <NavigateButton
+            key={item.name}
+            screen={item.screen}
+            style={item.style}
+            name={item.name}
+            type={item.type}
+            color={item.color}
+            nameStyle={item.nameStyle}
+            iconName={item.iconName}
+          />
+        ))}
       </View>
     </SafeAreaView>
   );
