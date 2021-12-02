@@ -10,3 +10,7 @@ export type NavReducerType = {
   destination: OriginType | null;
   travelTimeInformation: any;
 };
+
+export type StateReducerType = {
+  selected: any | null;
+};
